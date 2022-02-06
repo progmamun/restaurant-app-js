@@ -10,5 +10,8 @@ npm init
 edit script: "start": "parcel index.html",
     "build": "parcel build index.html"
 
-npm i parcel -D
+npm i parcel -D | sudo npm i parcel@2 -D
+npm i sass -D
+npm install
+npm start
 ```

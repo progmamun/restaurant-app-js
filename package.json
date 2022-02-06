@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/progmamun/restaurant-app-js/issues"
   },
-  "homepage": "https://github.com/progmamun/restaurant-app-js#readme"
+  "homepage": "https://github.com/progmamun/restaurant-app-js#readme",
+  "devDependencies": {}
 }
