@@ -1,5 +1,7 @@
 // import icons from '../img/icons.svg'; // parcel version 1
 import icons from 'url:../img/icons.svg'; // parcel version 2
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 const recipeContainer = document.querySelector('.recipe');
 
