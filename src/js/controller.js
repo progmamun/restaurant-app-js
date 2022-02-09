@@ -1,7 +1,7 @@
 // import icons from '../img/icons.svg'; // parcel version 1
-import icons from 'url:../img/icons.svg'; // parcel version 2
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+// import icons from 'url:../img/icons.svg'; // parcel version 2
+// import 'core-js/stable';
+// import 'regenerator-runtime/runtime';
 
 const recipeContainer = document.querySelector('.recipe');
 
@@ -30,11 +30,15 @@ const renderSpinner = function (parentEl) {
 
 const showRecipe = async function () {
   try {
+    const id = window.location.hash.slice(1);
+
+    if (!id) return;
     // 1) loading recipe
     renderSpinner(recipeContainer);
 
     const res = await fetch(
-      'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
+      // 'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
+      'https://forkify-api.herokuapp.com/api/v2/recipes/${id}'
     );
     const data = await res.json();
 
@@ -108,8 +112,9 @@ const showRecipe = async function () {
         <div class="recipe__ingredients">
           <h2 class="heading--2">Recipe ingredients</h2>
           <ul class="recipe__ingredient-list">
-          ${recipe.ingredients.map(ing => {
-            return `
+          ${recipe.ingredients
+            .map(ing => {
+              return `
             <li class="recipe__ingredient">
               <svg class="recipe__icon">
                 <use href="${icons}#icon-check"></use>
@@ -120,9 +125,10 @@ const showRecipe = async function () {
                 ${ing.description}
               </div>
             </li>
-            `;
-          })}
           </ul>
+            `;
+            })
+            .join('')}
         </div>
 
         <div class="recipe__directions">
@@ -152,4 +158,8 @@ const showRecipe = async function () {
     alert(err);
   }
 };
-showRecipe();
+// showRecipe();
+
+['hashchange', 'load'].forEach(ev => window.addEventListener(ev, showRecipe));
+
+// window.addEventListener('hashchange', showRecipe);
