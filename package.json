@@ -2,7 +2,7 @@
   "name": "restaurant-app",
   "version": "1.0.0",
   "description": "JavaScript with Real World App",
-  "main": "index.html",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
@@ -17,5 +17,9 @@
     "url": "https://github.com/progmamun/restaurant-app-js/issues"
   },
   "homepage": "https://github.com/progmamun/restaurant-app-js#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1",
+    "sass": "^1.49.7"
+  }
 }
