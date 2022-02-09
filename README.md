@@ -15,3 +15,7 @@ npm i sass -D
 npm install
 npm start
 ```
+
+### polyfilling
+
+`npm i core-js regenerator-runtime`
