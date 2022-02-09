@@ -1,4 +1,5 @@
 import * as model from './model.js';
+import recipeView from './views/recipeView.js';
 
 // import icons from '../img/icons.svg'; // parcel version 1
 import icons from 'url:../img/icons.svg'; // parcel version 2
@@ -42,6 +43,8 @@ const showRecipe = async function () {
     const { recipe } = model.state;
 
     // 2) Rendering recipe
+    recipeView.render(model.state.recipe);
+
     const markup = `
     <figure class="recipe__fig">
           <img src=${recipe.image} alt="${recipe.title}" class="recipe__img" />
