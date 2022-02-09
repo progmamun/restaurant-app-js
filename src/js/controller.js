@@ -22,7 +22,7 @@ const controlRecipes = async function () {
     const id = window.location.hash.slice(1);
 
     if (!id) return;
-    renderSpinner(recipeContainer);
+    recipeView.renderSpinner();
 
     // 1) loading recipe
     await model.loadRecipe(id);
