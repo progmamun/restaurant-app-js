@@ -16,6 +16,9 @@ npm install
 npm start
 ```
 
+1. `"parcel build index.html --dist-dir ./dist"`
+   cmd=> `npm run build`
+
 ### polyfilling
 
 `npm i core-js regenerator-runtime`
