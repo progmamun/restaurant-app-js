@@ -32,10 +32,10 @@ const controlSearchResults = async function () {
     throw err;
   }
 };
-controlSearchResults();
 
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
+  searchView.addHandlerSearch(controlSearchResults);
 };
 init();
 
