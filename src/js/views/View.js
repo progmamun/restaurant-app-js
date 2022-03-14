@@ -18,16 +18,16 @@ export default class View {
     newElements.forEach((newEl, i) => {
       const curEl = curElements[i];
 
-      if(
+      if (
         !newEl.isEqualNode(curEl) &&
-        newEl.firstChild?.nodeValue.trim() !== '';
+        newEl.firstChild?.nodeValue.trim() !== ''
       ) {
         curEl.textContent = newEl.textContent;
       }
     });
-}
-    // this._clear();
-    // this._parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+  // this._clear();
+  // this._parentElement.insertAdjacentHTML('afterbegin', markup);
   // }
 
   _clear() {
